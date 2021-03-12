@@ -1,7 +1,8 @@
-package com.foreach.android
+package com.foreach.android.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.foreach.android.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
