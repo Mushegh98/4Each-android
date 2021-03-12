@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Foreach</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="settings">Настройки</string>
+    <string name="time">Продолжительность раунда</string>
+    <string name="score">Количества очков для победы</string>
 </resources>

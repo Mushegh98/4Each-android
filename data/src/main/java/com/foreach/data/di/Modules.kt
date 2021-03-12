@@ -9,6 +9,8 @@ import com.foreach.data.dataservice.RetrofitService
 
 import com.foreach.data.utils.Constants.Companion.MAIN_URL
 import com.facebook.stetho.okhttp3.StethoInterceptor
+import com.foreach.data.datastore.SettingsRepository
+import com.foreach.data.repository.SettingsRepositoryImpl
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -68,7 +70,7 @@ val repositoryModule = module {
 
 
     /**Repositorys**/
-
+    single<SettingsRepository> { SettingsRepositoryImpl(get()) }
 }
 
 

@@ -22,18 +22,18 @@ abstract class FragmentBaseMVVM<ViewModel : BaseViewModel, ViewBind : ViewBindin
 //            .setLaunchSingleTop(false)
 //            .build()
 
-    protected var callback: OnFragmentEventListener? = null
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        try {
-            callback = activity as OnFragmentEventListener
-        } catch (e: ClassCastException) {
-            throw ClassCastException(
-                    activity.toString() + " must implement OnReviewSelectedListener"
-            )
-        }
-    }
+//    protected var callback: OnFragmentEventListener? = null
+//
+//    override fun onAttach(context: Context) {
+//        super.onAttach(context)
+//        try {
+//            callback = activity as OnFragmentEventListener
+//        } catch (e: ClassCastException) {
+//            throw ClassCastException(
+//                    activity.toString() + " must implement OnReviewSelectedListener"
+//            )
+//        }
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -105,8 +105,8 @@ abstract class FragmentBaseMVVM<ViewModel : BaseViewModel, ViewBind : ViewBindin
 
 
 
-    interface OnFragmentEventListener {
-        fun progressIsVisible(isVisible: Boolean, title: String? = "", description: String? = "")
-    }
+//    interface OnFragmentEventListener {
+//        fun progressIsVisible(isVisible: Boolean, title: String? = "", description: String? = "")
+//    }
 
 }
