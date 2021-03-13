@@ -3,6 +3,7 @@ package com.foreach.android.fragment.startFragment
 import androidx.lifecycle.viewModelScope
 import com.foreach.android.base.viewmodel.BaseViewModel
 import com.foreach.domain.interactor.StartFragmentInteractor
+import com.foreach.entities.roommodel.GameEntity
 import com.foreach.entities.roommodel.ThemesEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,5 +23,13 @@ class StartFragmentViewModel(private val startFragmentInteractor: StartFragmentI
 
     fun setStringData(name: String, value : String) {
         startFragmentInteractor.setStringData(name,value)
+    }
+
+    fun insertGameAllData(gameData : List<GameEntity>)  {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO){
+                startFragmentInteractor.insertGameAllData(gameData)
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@ package com.foreach.domain.usecase
 
 import com.foreach.data.datastore.StartFragmentRepository
 import com.foreach.domain.interactor.StartFragmentInteractor
+import com.foreach.entities.roommodel.GameEntity
 import com.foreach.entities.roommodel.ThemesEntity
 
 class StartFragmentUseCase(private val startFragmentRepository: StartFragmentRepository) : StartFragmentInteractor {
@@ -13,4 +14,8 @@ class StartFragmentUseCase(private val startFragmentRepository: StartFragmentRep
     }
 
     override suspend fun insertThemes(themesEntity: List<ThemesEntity>) = startFragmentRepository.insertThemes(themesEntity)
+
+    override suspend fun insertGameAllData(gameData : List<GameEntity>)  {
+        startFragmentRepository.insertGameAllData(gameData)
+    }
 }

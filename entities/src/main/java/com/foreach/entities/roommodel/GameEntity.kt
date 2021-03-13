@@ -4,9 +4,11 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity
+@Entity(tableName = "Game")
 data class GameEntity(
     @PrimaryKey
     @SerializedName("url")
-    var url : String
+    var url : String,
+    @SerializedName("type")
+    var type : String
 )

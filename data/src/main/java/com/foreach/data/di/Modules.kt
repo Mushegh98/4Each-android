@@ -9,9 +9,11 @@ import com.foreach.data.dataservice.RetrofitService
 
 import com.foreach.data.utils.Constants.Companion.MAIN_URL
 import com.facebook.stetho.okhttp3.StethoInterceptor
+import com.foreach.data.datastore.GameRepository
 import com.foreach.data.datastore.SettingsRepository
 import com.foreach.data.datastore.StartFragmentRepository
 import com.foreach.data.datastore.ThemesRepository
+import com.foreach.data.repository.GameRepositoryImpl
 import com.foreach.data.repository.SettingsRepositoryImpl
 import com.foreach.data.repository.StartFragmentRepositoryImpl
 import com.foreach.data.repository.ThemesRepositoryImpl
@@ -77,6 +79,7 @@ val repositoryModule = module {
     single<SettingsRepository> { SettingsRepositoryImpl(get()) }
     single<ThemesRepository> { ThemesRepositoryImpl(get()) }
     single<StartFragmentRepository> { StartFragmentRepositoryImpl(get(),get()) }
+    single<GameRepository> { GameRepositoryImpl(get(),get()) }
 }
 
 

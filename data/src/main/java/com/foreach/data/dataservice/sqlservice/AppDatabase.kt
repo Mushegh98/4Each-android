@@ -9,7 +9,7 @@ import com.foreach.entities.roommodel.ThemesEntity
 
 @Database(
         entities = [TestEntity::class, GameEntity::class, ThemesEntity::class],
-        version = 3,
+        version = 4,
         exportSchema = false
 )
 
