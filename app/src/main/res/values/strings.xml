@@ -10,4 +10,10 @@
     <string name="team1_title">Команда 1</string>
     <string name="team2_title">Команда 2</string>
     <string name="select_teams_next_btn">Далее</string>
+
+
+    <string name="start_game">Начать игру</string>
+    <string name="about_the_game">Об игре</string>
+    <string name="theme_title">Темы</string>
+
 </resources>

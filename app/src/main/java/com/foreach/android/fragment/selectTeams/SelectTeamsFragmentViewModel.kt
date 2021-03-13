@@ -1,4 +1,4 @@
-package com.foreach.android.fragment
+package com.foreach.android.fragment.selectTeams
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,8 +1,13 @@
-package com.foreach.android.fragment
+package com.foreach.android.fragment.selectTeams
 
+import android.os.Bundle
+import com.foreach.android.R
 import com.foreach.android.base.FragmentBaseMVVM
+import com.foreach.android.base.utils.extension.addFragment
 import com.foreach.android.base.utils.viewBinding
 import com.foreach.android.databinding.FragmentSelectTeamsBinding
+import com.foreach.android.fragment.selecttheme.SelectThemeFragmentFragment
+import kotlinx.android.synthetic.main.activity_main.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SelectTeamsFragment : FragmentBaseMVVM<SelectTeamsFragmentViewModel, FragmentSelectTeamsBinding>() {
@@ -27,7 +32,11 @@ class SelectTeamsFragment : FragmentBaseMVVM<SelectTeamsFragmentViewModel, Fragm
     override fun initViewClickListeners() {
         with(binding) {
             nextBtn.setOnClickListener {
-                //TODO("nextBtn onClick")
+                val bundle = Bundle().apply {
+                    putString("command1",binding.editTeam1Titles.text.toString())
+                    putString("command2",binding.editTeam2Titles.text.toString())
+                }
+                activity?.supportFragmentManager?.addFragment(R.id.frame,SelectThemeFragmentFragment.newInstance(bundle))
             }
         }
     }

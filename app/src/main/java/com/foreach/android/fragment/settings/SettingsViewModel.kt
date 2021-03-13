@@ -1,4 +1,4 @@
-package com.foreach.android.fragment
+package com.foreach.android.fragment.settings
 
 import com.foreach.android.base.viewmodel.BaseViewModel
 import com.foreach.domain.interactor.SettingsInteractor
