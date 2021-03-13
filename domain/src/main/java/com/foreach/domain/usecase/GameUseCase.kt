@@ -17,4 +17,8 @@ class GameUseCase(private val gameRepository: GameRepository) : GameInteractor {
     override suspend fun getGameData(title : String) : List<GameEntity>{
         return gameRepository.getGameData(title)
     }
+
+    override fun clearTeamPoints(){
+        gameRepository.clearTeamPoints()
+    }
 }

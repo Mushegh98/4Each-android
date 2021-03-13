@@ -34,4 +34,8 @@ class GameViewModel(private val gameInteractor: GameInteractor) : BaseViewModel(
             }
         }
     }
+
+    fun clearTeamPoints(){
+        gameInteractor.clearTeamPoints()
+    }
 }

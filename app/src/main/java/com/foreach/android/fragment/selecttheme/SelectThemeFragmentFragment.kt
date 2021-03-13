@@ -10,6 +10,7 @@ import com.foreach.android.R
 import com.foreach.android.adapter.ThemesAdapter
 import com.foreach.android.base.FragmentBaseMVVM
 import com.foreach.android.base.utils.extension.addFragment
+import com.foreach.android.base.utils.extension.replaceFragment
 import com.foreach.android.base.utils.viewBinding
 import com.foreach.android.databinding.FragmentSelectThemeFragmentBinding
 import com.foreach.android.fragment.game.GameFragment
@@ -56,6 +57,6 @@ class SelectThemeFragmentFragment(private val bundle: Bundle) : FragmentBaseMVVM
         bundle.apply {
             putString("title",themesEntity.title)
         }
-        activity?.supportFragmentManager?.addFragment(R.id.frame,GameFragment.newInstance(bundle))
+        activity?.supportFragmentManager?.replaceFragment(R.id.frame,GameFragment.newInstance(bundle))
     }
 }

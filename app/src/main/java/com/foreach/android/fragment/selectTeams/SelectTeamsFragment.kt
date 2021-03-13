@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.foreach.android.R
 import com.foreach.android.base.FragmentBaseMVVM
 import com.foreach.android.base.utils.extension.addFragment
+import com.foreach.android.base.utils.extension.replaceFragment
 import com.foreach.android.base.utils.viewBinding
 import com.foreach.android.databinding.FragmentSelectTeamsBinding
 import com.foreach.android.fragment.selecttheme.SelectThemeFragmentFragment
@@ -36,7 +37,7 @@ class SelectTeamsFragment : FragmentBaseMVVM<SelectTeamsFragmentViewModel, Fragm
                     putString("command1",binding.editTeam1Titles.text.toString())
                     putString("command2",binding.editTeam2Titles.text.toString())
                 }
-                activity?.supportFragmentManager?.addFragment(R.id.frame,SelectThemeFragmentFragment.newInstance(bundle))
+                activity?.supportFragmentManager?.replaceFragment(R.id.frame,SelectThemeFragmentFragment.newInstance(bundle))
             }
         }
     }

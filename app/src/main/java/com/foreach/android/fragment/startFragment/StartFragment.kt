@@ -7,6 +7,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.foreach.android.R
 import com.foreach.android.base.FragmentBaseMVVM
 import com.foreach.android.base.utils.extension.addFragment
+import com.foreach.android.base.utils.extension.replaceFragment
 import com.foreach.android.databinding.FragmentStartBinding
 import com.foreach.android.fragment.aboutGame.AboutGameFragment
 import com.foreach.android.fragment.selectTeams.SelectTeamsFragment
@@ -58,17 +59,17 @@ class StartFragment : FragmentBaseMVVM<StartFragmentViewModel,FragmentStartBindi
     override fun initViewClickListeners() {
         with(binding){
             btnStartGame.setOnClickListener {
-                activity?.supportFragmentManager?.addFragment(R.id.frame,SelectTeamsFragment.newInstance())
+                activity?.supportFragmentManager?.replaceFragment(R.id.frame,SelectTeamsFragment.newInstance())
             }
             btnSettings.setOnClickListener {
                 activity
-                    ?.supportFragmentManager?.addFragment(
+                    ?.supportFragmentManager?.replaceFragment(
                         R.id.frame,
                         SettingsFragment.newInstance()
                     )
             }
             btnAboutTheGame.setOnClickListener {
-                activity?.supportFragmentManager?.addFragment(R.id.frame,AboutGameFragment.newInstance())
+                activity?.supportFragmentManager?.replaceFragment(R.id.frame,AboutGameFragment.newInstance())
             }
         }
 

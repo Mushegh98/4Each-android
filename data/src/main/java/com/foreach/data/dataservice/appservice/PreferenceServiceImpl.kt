@@ -120,4 +120,12 @@ class PreferenceServiceImpl(private val context: Context) : PreferenceService {
         editor?.remove(name + "str")
         editor?.apply()
     }
+
+    override fun clearTeamPoints() {
+        val editor = sharedPreferences?.edit()
+        editor?.remove("command1" + "str")
+        editor?.apply()
+        editor?.remove("command2" + "str")
+        editor?.apply()
+    }
 }

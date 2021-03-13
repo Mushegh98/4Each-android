@@ -18,4 +18,8 @@ class GameRepositoryImpl(private val preferenceService: PreferenceService, priva
     override suspend fun getGameData(title : String) : List<GameEntity>{
         return roomDao.getGameData(title)
     }
+
+    override fun clearTeamPoints(){
+        preferenceService.clearTeamPoints()
+    }
 }
