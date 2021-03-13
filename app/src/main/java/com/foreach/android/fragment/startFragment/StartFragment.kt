@@ -32,12 +32,12 @@ class StartFragment : FragmentBaseMVVM<StartFragmentViewModel,FragmentStartBindi
         if(viewModel.getStringData("room").isNullOrEmpty()){
             val listEntity = buildList<ThemesEntity> {
                 add(ThemesEntity("https://s3-eu-west-1.amazonaws.com/uploads.playbaamboozle.com/uploads/images/82626/1594704748_77856","Football"))
-                add(ThemesEntity("http://wall-papers.ru/main.php?g2_view=core.DownloadItem&g2_itemId=105063&g2_serialNumber=1","Hollywood_Stars"))
+                add(ThemesEntity("http://wall-papers.ru/main.php?g2_view=core.DownloadItem&g2_itemId=105063&g2_serialNumber=1","Hollywood stars"))
                 add(ThemesEntity("https://mtdata.ru/u3/photo6E99/20153165747-0/original.jpg","Brands"))
             }
             val gameAllData = buildList<GameEntity> {
                 add(GameEntity("https://idsb.tmgrup.com.tr/ly/uploads/images/2020/09/12/57778.jpg","Football"))
-                add(GameEntity("https://upload.wikimedia.org/wikipedia/commons/9/9a/Cristiano_Ronaldo_Portugal.jpg","football"))
+                add(GameEntity("https://upload.wikimedia.org/wikipedia/commons/9/9a/Cristiano_Ronaldo_Portugal.jpg","Football"))
                 add(GameEntity("https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ec595d45f39760007b05c07%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D989%26cropX2%3D2480%26cropY1%3D74%26cropY2%3D1564","Football"))
                 add(GameEntity("https://s.hs-data.com/bilder/spieler/gross/87809.jpg","Football"))
                 add(GameEntity("https://cdn.footboom.net/img/upload/3/73a13-Mokhamed-Salakh.jpeg","Football"))
