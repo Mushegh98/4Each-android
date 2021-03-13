@@ -12,7 +12,7 @@ import com.foreach.android.databinding.FragmentGameBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-class GameFragment : FragmentBaseMVVM<GameViewModel,FragmentGameBinding>() {
+class GameFragment(private val bundle: Bundle) : FragmentBaseMVVM<GameViewModel,FragmentGameBinding>() {
 
 
     override val viewModel by viewModel<GameViewModel>()
@@ -20,7 +20,7 @@ class GameFragment : FragmentBaseMVVM<GameViewModel,FragmentGameBinding>() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = GameFragment()
+        fun newInstance(bundle: Bundle) = GameFragment(bundle)
     }
 
     override fun initView() {
@@ -28,6 +28,10 @@ class GameFragment : FragmentBaseMVVM<GameViewModel,FragmentGameBinding>() {
     }
 
     override fun navigateUp() {
+        navigateBackStack()
+    }
+
+    override fun initViewClickListeners() {
 
     }
 }

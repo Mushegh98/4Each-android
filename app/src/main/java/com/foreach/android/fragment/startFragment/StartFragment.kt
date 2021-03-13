@@ -11,6 +11,7 @@ import com.foreach.android.databinding.FragmentStartBinding
 import com.foreach.android.fragment.aboutGame.AboutGameFragment
 import com.foreach.android.fragment.selectTeams.SelectTeamsFragment
 import com.foreach.android.fragment.settings.SettingsFragment
+import com.foreach.entities.roommodel.ThemesEntity
 
 class StartFragment : FragmentBaseMVVM<StartFragmentViewModel,FragmentStartBinding>() {
 
@@ -18,24 +19,24 @@ class StartFragment : FragmentBaseMVVM<StartFragmentViewModel,FragmentStartBindi
     override val binding by viewBinding<FragmentStartBinding>()
 
 
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        iniViewClickListeners()
-    }
-
-    private fun iniViewClickListeners() {
-
-    }
-
     companion object {
         fun newInstance(): StartFragment {
             return StartFragment()
         }
     }
 
+    @ExperimentalStdlibApi
     override fun initView() {
+        if(viewModel.getStringData("room").isNullOrEmpty()){
+            val listEntity = buildList<ThemesEntity> {
+                add(ThemesEntity("https://s3-eu-west-1.amazonaws.com/uploads.playbaamboozle.com/uploads/images/82626/1594704748_77856","Football"))
+            }
+            viewModel.insertThemes(listEntity)
+            viewModel.setStringData("room","room")
 
+        }else{
+
+        }
     }
 
     override fun navigateUp() {

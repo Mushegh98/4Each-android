@@ -10,7 +10,11 @@ import com.foreach.data.dataservice.RetrofitService
 import com.foreach.data.utils.Constants.Companion.MAIN_URL
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.foreach.data.datastore.SettingsRepository
+import com.foreach.data.datastore.StartFragmentRepository
+import com.foreach.data.datastore.ThemesRepository
 import com.foreach.data.repository.SettingsRepositoryImpl
+import com.foreach.data.repository.StartFragmentRepositoryImpl
+import com.foreach.data.repository.ThemesRepositoryImpl
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -52,9 +56,9 @@ val apiModule = module {
 }
 val databaseModule = module {
     fun provideDatabase(application: Application): AppDatabase {
-        return Room.databaseBuilder(application, AppDatabase::class.java, "BikeDB")
-//                 .fallbackToDestructiveMigration()
-                .allowMainThreadQueries()
+        return Room.databaseBuilder(application, AppDatabase::class.java, "GameDB")
+                 .fallbackToDestructiveMigration()
+//                .allowMainThreadQueries()
                 .build()
     }
     single { provideDatabase(androidApplication()) }
@@ -71,6 +75,8 @@ val repositoryModule = module {
 
     /**Repositorys**/
     single<SettingsRepository> { SettingsRepositoryImpl(get()) }
+    single<ThemesRepository> { ThemesRepositoryImpl(get()) }
+    single<StartFragmentRepository> { StartFragmentRepositoryImpl(get(),get()) }
 }
 
 
