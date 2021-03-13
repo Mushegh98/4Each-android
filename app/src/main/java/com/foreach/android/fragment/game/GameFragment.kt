@@ -104,6 +104,23 @@ class GameFragment(private val bundle: Bundle) : FragmentBaseMVVM<GameViewModel,
                                     binding.points.text = 0.toString()
                                     count++
                                     gameList = gameList?.shuffled()
+                                    with(binding){
+                                        gameList?.let {
+                                            Glide.with(bigImage.context).load(it[0].url)
+                                                .into(bigImage)
+                                            Glide.with(image1.context).load(it[0].url)
+                                                .into(image1)
+                                            Glide.with(image2.context).load(it[1].url)
+                                                .into(image2)
+                                            Glide.with(image3.context).load(it[2].url)
+                                                .into(image3)
+                                            Glide.with(image4.context).load(it[3].url)
+                                                .into(image4)
+                                            Glide.with(image5.context).load(it[4].url)
+                                                .into(image5)
+                                        }
+                                    }
+
                                     timer?.start()
                                 }
 
