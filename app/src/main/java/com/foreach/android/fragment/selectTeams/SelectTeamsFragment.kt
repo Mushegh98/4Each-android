@@ -39,6 +39,9 @@ class SelectTeamsFragment : FragmentBaseMVVM<SelectTeamsFragmentViewModel, Fragm
                 }
                 activity?.supportFragmentManager?.replaceFragment(R.id.frame,SelectThemeFragmentFragment.newInstance(bundle))
             }
+            backBtn.setOnClickListener {
+                navigateBackStack()
+            }
         }
     }
 

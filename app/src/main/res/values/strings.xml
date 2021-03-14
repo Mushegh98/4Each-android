@@ -4,12 +4,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="settings">Настройки</string>
     <string name="time">Продолжительность раунда</string>
-    <string name="score">Количества очков для победы</string>
+    <string name="score">КОЛИЧЕСТВО ОЧКОВ ДЛЯ\n ПОБЕДЫ</string>
 
-    <string name="select_teams_title">Настройка команд</string>
-    <string name="team1_title">Команда 1</string>
-    <string name="team2_title">Команда 2</string>
-    <string name="select_teams_next_btn">Далее</string>
+    <string name="select_teams_title">НАСТРОЙКИ КОМАНД</string>
+    <string name="team1_title">КОМАНДА 1</string>
+    <string name="team2_title">КОМАНДА 2</string>
+    <string name="select_teams_next_btn">ДАЛЕЕ</string>
 
 
     <string name="start_game">Начать игру</string>
@@ -17,13 +17,15 @@
     <string name="theme_title">Темы</string>
     <string name="team">Команда</string>
 
-    <string name="text_about_game1">Смысл игры «Алиас» в угадывании слов.
+    <string name="text_about_game1">Смысл игры «Foreach» в угадывании слов.
 Нужно объяснить другим участникам своей команды, что изображено на показанной картинке</string>
     <string name="text_about_game2">Время на раунд ограничено</string>
-    <string name="text_about_game3">За правильные ответы команде даются баллы - за каждое угаданное изображение по одному баллу.\n
-Чем больше картинок получится отгадать - тем больше баллов получит команда</string>
-    <string name="text_about_game4">Вы можете настроить время раунда, выбрать количество баллов необходимых для победы, а также звуковые эффекты</string>
+    <string name="text_about_game3">За правильные ответы команде даются баллы - за каждое угаданное изображение по одному баллу.\nЧем больше картинок получится отгадать - тем больше баллов получит команда</string>
+    <string name="text_about_game4">Вы можете настроить время раунда, выбрать количество баллов необходимых для победы.</string>
     <string name="text_about_game5">Вы можете настроить время раунда, выбрать количество баллов необходимых для победы, а также звуковые эффекты</string>
-    <string name="text_about_game6">Игра "Алиас" - отличный способ провести время с друзьями или семьей, расслабиться после напряженной трудовой недели</string>
+    <string name="text_about_game6">Игра «Foreach» - отличный способ провести время с друзьями или семьей, расслабиться после напряженной трудовой недели</string>
+    <string name="nastroyki">НАСТРОЙКИ</string>
+    <string name="about">ОБ ИГРЕ</string>
+    <string name="game">ИГРА</string>
 
 </resources>

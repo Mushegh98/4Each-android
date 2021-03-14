@@ -4,13 +4,11 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
 import android.os.CountDownTimer
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import com.bumptech.glide.Glide
-import com.foreach.android.R
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 import com.foreach.android.base.FragmentBaseMVVM
 import com.foreach.android.base.utils.viewBinding
 import com.foreach.android.databinding.FragmentGameBinding
@@ -20,7 +18,7 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 
 
-class GameFragment(private val bundle: Bundle) : FragmentBaseMVVM<GameViewModel,FragmentGameBinding>() {
+class GameFragment(private val bundle: Bundle) : FragmentBaseMVVM<GameViewModel, FragmentGameBinding>() {
 
 
     override val viewModel by viewModel<GameViewModel>()
@@ -39,15 +37,15 @@ class GameFragment(private val bundle: Bundle) : FragmentBaseMVVM<GameViewModel,
         val command2 = bundle.getString("command2")
         val title = bundle.getString("title")
 
-        viewModel.setStringData("command2","0")
-        viewModel.setStringData("command1","0")
+        viewModel.setStringData("command2", "0")
+        viewModel.setStringData("command1", "0")
 
         if (title != null) {
             viewModel.getGameData(title)
         }
 
         if(viewModel.getStringData("points").isNullOrEmpty()){
-            viewModel.setStringData("points","15")
+            viewModel.setStringData("points", "15")
         }
 
         binding.command.text = command1
@@ -60,9 +58,15 @@ class GameFragment(private val bundle: Bundle) : FragmentBaseMVVM<GameViewModel,
         duration?.let {
             timer = object: CountDownTimer(duration, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
-                    val sDuartion = String.format(Locale.ENGLISH,"%02d : %02d",
-                    TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
-                    TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)))
+                    val sDuartion = String.format(
+                        Locale.ENGLISH, "%02d : %02d",
+                        TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
+                        TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(
+                            TimeUnit.MILLISECONDS.toMinutes(
+                                millisUntilFinished
+                            )
+                        )
+                    )
                     binding.time.text = sDuartion
                 }
 
@@ -70,17 +74,23 @@ class GameFragment(private val bundle: Bundle) : FragmentBaseMVVM<GameViewModel,
 
                     if(count % 2 == 0){
                         if(viewModel.getStringData("command2").isNullOrEmpty()){
-                            viewModel.setStringData("command2","0")
+                            viewModel.setStringData("command2", "0")
                         }else{
-                            viewModel.setStringData("command2",(viewModel.getStringData("command2")!!.toInt() + binding.points.text.toString().toInt()).toString())
+                            viewModel.setStringData("command2",
+                                (viewModel.getStringData("command2")!!
+                                    .toInt() + binding.points.text.toString().toInt()).toString()
+                            )
                         }
 
                     }else{
                         if(viewModel.getStringData("command1").isNullOrEmpty()){
-                            viewModel.setStringData("command1","0")
+                            viewModel.setStringData("command1", "0")
                         }
                         else{
-                            viewModel.setStringData("command1",(viewModel.getStringData("command1")!!.toInt() + binding.points.text.toString().toInt()).toString())
+                            viewModel.setStringData("command1",
+                                (viewModel.getStringData("command1")!!
+                                    .toInt() + binding.points.text.toString().toInt()).toString()
+                            )
                         }
 
                     }
@@ -90,33 +100,55 @@ class GameFragment(private val bundle: Bundle) : FragmentBaseMVVM<GameViewModel,
                         .setPositiveButton(
                             "Ok",
                             DialogInterface.OnClickListener { dialog, which ->
-                                if(count % 2 == 0){
+                                if (count % 2 == 0) {
                                     binding.command.text = command1
-                                }else{
+                                } else {
                                     binding.command.text = command2
                                 }
 
-                                if (viewModel.getStringData("command1")!!.toInt() >= viewModel.getStringData("points")!!.toInt() || viewModel.getStringData("command2")!!.toInt()  >= viewModel.getStringData("points")!!.toInt()) {
+                                if (viewModel.getStringData("command1")!!
+                                        .toInt() >= viewModel.getStringData(
+                                        "points"
+                                    )!!.toInt() || viewModel.getStringData("command2")!!
+                                        .toInt() >= viewModel.getStringData(
+                                        "points"
+                                    )!!.toInt()
+                                ) {
                                     dialog?.dismiss()
-                                    Toast.makeText(context, "Поздровляем вы выиграли", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(
+                                        context,
+                                        "Поздровляем вы выиграли",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                     navigateBackStack()
                                 } else {
                                     binding.points.text = 0.toString()
                                     count++
                                     gameList = gameList?.shuffled()
-                                    with(binding){
+                                    with(binding) {
+                                        var requestOptions = RequestOptions()
+                                        requestOptions = requestOptions.transforms(
+                                            CenterCrop(),
+                                            RoundedCorners(20)
+                                        )
                                         gameList?.let {
                                             Glide.with(bigImage.context).load(it[0].url)
+                                                .apply(requestOptions)
                                                 .into(bigImage)
                                             Glide.with(image1.context).load(it[0].url)
+                                                .apply(requestOptions)
                                                 .into(image1)
                                             Glide.with(image2.context).load(it[1].url)
+                                                .apply(requestOptions)
                                                 .into(image2)
                                             Glide.with(image3.context).load(it[2].url)
+                                                .apply(requestOptions)
                                                 .into(image3)
                                             Glide.with(image4.context).load(it[3].url)
+                                                .apply(requestOptions)
                                                 .into(image4)
                                             Glide.with(image5.context).load(it[4].url)
+                                                .apply(requestOptions)
                                                 .into(image5)
                                         }
                                     }
@@ -126,7 +158,13 @@ class GameFragment(private val bundle: Bundle) : FragmentBaseMVVM<GameViewModel,
 
 
                             })
-                        .setMessage("Вы набирали ${binding.points.text.toString()} очков, в общем ${if(count %2 ==0) viewModel.getStringData("command2")!!.toInt()  else viewModel.getStringData("command1")!!.toInt()  } очков.")
+                        .setMessage(
+                            "Вы набирали ${binding.points.text.toString()} очков, в общем ${
+                                if (count % 2 == 0) viewModel.getStringData(
+                                    "command2"
+                                )!!.toInt() else viewModel.getStringData("command1")!!.toInt()
+                            } очков."
+                        )
                         dialog.show()
 
                 }
@@ -143,24 +181,34 @@ class GameFragment(private val bundle: Bundle) : FragmentBaseMVVM<GameViewModel,
 
     override fun initViewClickListeners() {
         with(binding){
+            var requestOptions = RequestOptions()
+            requestOptions = requestOptions.transforms(
+                CenterCrop(),
+                RoundedCorners(20)
+            )
             image1.setOnClickListener {
                 Glide.with(bigImage.context).load(gameList?.get(0)?.url)
+                    .apply(requestOptions)
                     .into(bigImage)
             }
             image2.setOnClickListener {
                 Glide.with(bigImage.context).load(gameList?.get(1)?.url)
+                    .apply(requestOptions)
                     .into(bigImage)
             }
             image3.setOnClickListener {
                 Glide.with(bigImage.context).load(gameList?.get(2)?.url)
+                    .apply(requestOptions)
                     .into(bigImage)
             }
             image4.setOnClickListener {
                 Glide.with(bigImage.context).load(gameList?.get(3)?.url)
+                    .apply(requestOptions)
                     .into(bigImage)
             }
             image5.setOnClickListener {
                 Glide.with(bigImage.context).load(gameList?.get(4)?.url)
+                    .apply(requestOptions)
                     .into(bigImage)
             }
             confirm.setOnClickListener {
@@ -170,20 +218,29 @@ class GameFragment(private val bundle: Bundle) : FragmentBaseMVVM<GameViewModel,
                     gameList = gameList?.shuffled()
                     gameList?.let {
                         Glide.with(bigImage.context).load(it[0].url)
+                            .apply(requestOptions)
                             .into(bigImage)
                         Glide.with(image1.context).load(it[0].url)
+                            .apply(requestOptions)
                             .into(image1)
                         Glide.with(image2.context).load(it[1].url)
+                            .apply(requestOptions)
                             .into(image2)
                         Glide.with(image3.context).load(it[2].url)
+                            .apply(requestOptions)
                             .into(image3)
                         Glide.with(image4.context).load(it[3].url)
+                            .apply(requestOptions)
                             .into(image4)
                         Glide.with(image5.context).load(it[4].url)
+                            .apply(requestOptions)
                             .into(image5)
                     }
                 }
                 binding.points.text = points.toString()
+            }
+            backBtn.setOnClickListener {
+                navigateBackStack()
             }
         }
     }
@@ -191,20 +248,31 @@ class GameFragment(private val bundle: Bundle) : FragmentBaseMVVM<GameViewModel,
     override fun observes() {
         with(viewModel){
             observe(gameData){
+                var requestOptions = RequestOptions()
+                requestOptions = requestOptions.transforms(
+                    CenterCrop(),
+                    RoundedCorners(20)
+                )
                 gameList = it.shuffled()
                 with(binding){
                     gameList?.let {
                         Glide.with(bigImage.context).load(it[0].url)
+                            .apply(requestOptions)
                             .into(bigImage)
                         Glide.with(image1.context).load(it[0].url)
+                            .apply(requestOptions)
                             .into(image1)
                         Glide.with(image2.context).load(it[1].url)
+                            .apply(requestOptions)
                             .into(image2)
                         Glide.with(image3.context).load(it[2].url)
+                            .apply(requestOptions)
                             .into(image3)
                         Glide.with(image4.context).load(it[3].url)
+                            .apply(requestOptions)
                             .into(image4)
                         Glide.with(image5.context).load(it[4].url)
+                            .apply(requestOptions)
                             .into(image5)
                     }
 

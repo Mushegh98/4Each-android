@@ -42,7 +42,11 @@ class SelectThemeFragmentFragment(private val bundle: Bundle) : FragmentBaseMVVM
     }
 
     override fun initViewClickListeners() {
-
+        with(binding){
+            backBtn.setOnClickListener {
+                navigateBackStack()
+            }
+        }
     }
 
     override fun observes() {

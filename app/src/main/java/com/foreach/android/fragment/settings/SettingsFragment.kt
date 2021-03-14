@@ -61,6 +61,9 @@ class SettingsFragment : FragmentBaseMVVM<SettingsViewModel,FragmentSettingsBind
                 timePoint.text = time
                 viewModel.setStringData("time",time)
             }
+            backBtn.setOnClickListener {
+                navigateBackStack()
+            }
         }
     }
 

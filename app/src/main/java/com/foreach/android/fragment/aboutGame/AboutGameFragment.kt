@@ -26,7 +26,11 @@ class AboutGameFragment : FragmentBaseMVVM<AboutGameViewModel,FragmentAboutGameB
     }
 
     override fun initViewClickListeners() {
-
+        with(binding){
+            backBtn.setOnClickListener {
+                navigateBackStack()
+            }
+        }
     }
 
     override fun observes() {

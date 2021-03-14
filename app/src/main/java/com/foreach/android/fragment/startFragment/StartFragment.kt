@@ -37,7 +37,7 @@ class StartFragment : FragmentBaseMVVM<StartFragmentViewModel,FragmentStartBindi
                 add(ThemesEntity("https://www.mgpu.ru/wp-content/uploads/2018/01/geogr_02.jpg","Geography and nature"))
                 add(ThemesEntity("https://img3.goodfon.ru/original/1024x1024/e/7d/medved-buryy-trava-priroda-3554.jpg","Plants and animals"))
                 add(ThemesEntity("https://img3.goodfon.ru/original/1024x1024/e/7d/medved-buryy-trava-priroda-3554.jpg","Computer games"))
-                add(ThemesEntity("","Other"))
+                add(ThemesEntity("https://1hello.ru/wp-content/uploads/2017/01/other-%D0%B8%D0%BB%D0%B8-another-326x245.jpg","Other"))
             }
             val gameAllData = buildList<GameEntity> {
                 add(GameEntity("https://idsb.tmgrup.com.tr/ly/uploads/images/2020/09/12/57778.jpg","Football"))

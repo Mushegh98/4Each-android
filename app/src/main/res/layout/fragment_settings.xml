@@ -4,157 +4,313 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".fragment.settings.SettingsFragment">
 
 
-    <TextView
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/settings"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1558" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ic_toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.05" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintTop_toTopOf="parent">
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:lines="1"
-        android:maxLines="1"
-        android:text="@string/time"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.27" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.752" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.061" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.195" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/backBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/gl16"
+            app:layout_constraintStart_toStartOf="@+id/gl15"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2439" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.768" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.358" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.653" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/rubik"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="@string/nastroyki"
+            android:textColor="#FFB24C"
+            app:autoSizePresetSizes="@array/autosize_settings"
+            app:layout_constraintBottom_toTopOf="@+id/gl20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl19" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ic_background_all"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        app:layout_constraintTop_toTopOf="@+id/guideline12">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnMinusTime"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:paddingBottom="3dp"
-        android:text="-"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:background="@drawable/circle"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.181" />
 
-    <TextView
-        android:id="@+id/timePoint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintStart_toEndOf="@id/btnMinusTime"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.263" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnPlusTime"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/circle"
-        android:gravity="center"
-        android:paddingBottom="3dp"
-        android:text="+"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintStart_toEndOf="@+id/timePoint"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.095" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.905" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3265" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4082" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/rubik"
+            android:gravity="center"
+            android:text="ПРОДОЛЖИТЕЛЬНОСТЬ \nРАУНДА"
+            android:textColor="#4A6495"
+            android:textStyle="bold"
+            app:autoSizePresetSizes="@array/autosize_settings"
+            app:layout_constraintBottom_toTopOf="@+id/gl22"
+            app:layout_constraintEnd_toStartOf="@+id/gl24"
+            app:layout_constraintStart_toStartOf="@+id/gl23"
+            app:layout_constraintTop_toTopOf="@+id/gl21" />
 
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPlusTime"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/ic_plus"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/gl26"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnMinusTime"
+            app:layout_constraintTop_toTopOf="@+id/gl25" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/score"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnMinusTime"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/ic_minus"
+            android:gravity="center"
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnMinusScore"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/circle"
-        android:gravity="center"
-        android:paddingBottom="3dp"
-        android:text="-"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/guideline7" />
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/gl26"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/btnPlusTime"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl25" />
 
-    <TextView
-        android:id="@+id/scorePoint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="15"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintStart_toEndOf="@+id/btnMinusScore"
-        app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnPlusScore"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/circle"
-        android:gravity="center"
-        android:paddingBottom="3dp"
-        android:text="+"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintStart_toEndOf="@+id/scorePoint"
-        app:layout_constraintTop_toTopOf="@+id/guideline7" />
+        <TextView
+            android:id="@+id/timePoint"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/rubik"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#4A6495"
+            android:textStyle="bold"
+            app:autoSizePresetSizes="@array/autosize_settings"
+            app:layout_constraintBottom_toTopOf="@+id/gl26"
+            app:layout_constraintEnd_toStartOf="@+id/btnPlusTime"
+            app:layout_constraintStart_toEndOf="@+id/btnMinusTime"
+            app:layout_constraintTop_toTopOf="@+id/gl25" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5367" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6183" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/rubik"
+            android:gravity="center"
+            android:text="КОЛИЧЕСТВО ОЧКОВ ДЛЯ\n ПОБЕДЫ"
+            android:textColor="#4A6495"
+            android:textStyle="bold"
+            app:autoSizePresetSizes="@array/autosize_settings"
+            app:layout_constraintBottom_toTopOf="@+id/gl28"
+            app:layout_constraintEnd_toStartOf="@+id/gl24"
+            app:layout_constraintStart_toStartOf="@+id/gl23"
+            app:layout_constraintTop_toTopOf="@+id/gl27" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6836" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7653" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnMinusScore"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/ic_minus"
+            app:layout_constraintBottom_toTopOf="@+id/gl30"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/btnPlusScore"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl29" />
+
+        <TextView
+            android:id="@+id/scorePoint"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="15"
+            android:textColor="#4A6495"
+            android:textStyle="bold"
+            app:autoSizePresetSizes="@array/autosize_settings"
+            android:gravity="center"
+            android:fontFamily="@font/rubik"
+            app:layout_constraintBottom_toTopOf="@+id/gl30"
+            app:layout_constraintEnd_toStartOf="@+id/btnPlusScore"
+            app:layout_constraintStart_toEndOf="@+id/btnMinusScore"
+            app:layout_constraintTop_toTopOf="@+id/gl29" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPlusScore"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/ic_plus"
+            app:layout_constraintBottom_toTopOf="@+id/gl30"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnMinusScore"
+            app:layout_constraintTop_toTopOf="@+id/gl29" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
